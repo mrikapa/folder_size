@@ -18,7 +18,7 @@ directory, or absolute) without restarting:
     Depth > 3
 
 Every report is also written to a timestamped log file under:
-    ~/Documents/Projects/FolderSizeLogs/
+    ~/Documents/Projects/FolderSize/Logs
 
     folder_size_<foldername>_<mmddyyyy>.<HH>.<MM>.<SS>.txt   (24h time)
 
@@ -29,7 +29,7 @@ import os
 import sys
 from datetime import datetime
 
-LOG_DIR = os.path.expanduser("~/Documents/Projects/FolderSizeLogs/")
+LOG_DIR = os.path.expanduser("~/Documents/Projects/FolderSize/Logs")
 
 
 def sizeof_fmt(num_bytes):
