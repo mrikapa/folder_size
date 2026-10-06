@@ -87,10 +87,10 @@ def build_tree(path, depth, max_depth):
             elif entry.is_dir():
                 if depth < max_depth:
                     sub_total, sub_children = build_tree(entry.path, depth + 1, max_depth)
+                    total += sub_total
+                    children.append((entry.name, sub_total, sub_children))
                 else:
-                    sub_total, sub_children = get_size_no_tree(entry.path), None
-                total += sub_total
-                children.append((entry.name, sub_total, sub_children))
+                    total += get_size_no_tree(entry.path)
         except OSError:
             continue
 
